@@ -4,63 +4,67 @@ import java.util.Set;
 public class CitySetDemo {
 public static void main(String[] args) {
 
-Set<String> colors = new HashSet<>();
+Set<String> cities = new HashSet<>();
 
 
 
-colors.add("Red");
-colors.add("Blue");
-colors.add("Green");
-colors.add("Black");
-colors.add("Yellow");
+cities.add("Muscat");
+cities.add("Salalah");
+cities.add("Sohar");
+cities.add("Nizwa");
+cities.add("Sur");
 
 
 
-System.out.println("Original Color Set: " + colors);
+System.out.println("Original City Set: " + cities);
+
+
+System.out.println("\n--- Testing Duplicates ---");
+boolean isAdded = cities.add("Muscat");
+System.out.println("Was 'Muscat' added again? " + isAdded);
+System.out.println("Set after duplicate test: " + cities);
 
 
 
-System.out.println("Testing Duplicates ");
-boolean isAdded = colors.add("Red");
+System.out.println("\n--- Checking Existence ---");
+System.out.println("Does 'Salalah' exist? " + cities.contains("Salalah"));
+System.out.println("Does 'Dubai' exist? " + cities.contains("Dubai"));
 
-System.out.println("Was 'Red' added again? " + isAdded);
-System.out.println("Set after duplicate test: " + colors);
 
-System.out.println(" Checking Existence ");
+System.out.println("\n--- Removing City ---");
+cities.remove("Sur");
 
-System.out.println("Does 'Blue' exist? " + colors.contains("Blue"));
-
-System.out.println("Does 'Purple' exist? " + colors.contains("Purple"));
+System.out.println("Set after removing 'Sur': " + cities);
 
 
 
-System.out.println(" Removing Color ");
-colors.remove("Black");
-
-System.out.println("Set after removing 'Black': " + colors);
+System.out.println("\n--- Checking Size ---");
+System.out.println("Total cities currently: " + cities.size());
 
 
 
-System.out.println(" Checking Size ");
-System.out.println("Total number of colors: " + colors.size());
+cities.add("Ibri");
 
-colors.add("Orange");
-System.out.println("Updated Set with 'Orange': " + colors);
-
-System.out.println("New total count: " + colors.size());
+System.out.println("Updated Set with 'Ibri': " + cities);
+System.out.println("New total count: " + cities.size());
 
 
+System.out.println("\n--- Clearing the Set ---");
+cities.clear();
 
-System.out.println(" Clearing the Set ");
-colors.clear();
-
-System.out.println("Set after clearing: " + colors);
+System.out.println("Set after clearing: " + cities);
 
 
 
-System.out.println("Final size confirmation: " + colors.size());
-if (colors.isEmpty()) {
-System.out.println("Message: The color set now contains zero elements.");
+if (cities.isEmpty() && cities.size() == 0) {
+System.out.println("Final confirmation: The city set now contains zero elements.");
+}
+
+
+
 }
 }
-}
+
+
+
+
